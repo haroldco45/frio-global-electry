@@ -27,7 +27,6 @@
             padding: 20px;
         }
 
-        /* Contenedor Principal */
         .card {
             background: var(--white);
             width: 100%;
@@ -39,131 +38,111 @@
             position: relative;
         }
 
-        /* Header con Logo */
         .header {
             background: linear-gradient(135deg, #2c3e50, #4ca1af);
-            padding: 40px 20px;
+            padding: 30px 20px;
             position: relative;
         }
 
         .logo-container {
             background: white;
-            width: 120px;
-            height: 120px;
+            width: 100px;
+            height: 100px;
             margin: 0 auto;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
             box-shadow: 0 8px 15px rgba(0,0,0,0.2);
-            border: 4px solid var(--accent-yellow);
+            border: 3px solid var(--accent-yellow);
         }
 
-        .logo-container img {
-            width: 85%;
-            height: auto;
-            object-fit: contain;
+        .logo-container img { width: 80%; height: auto; object-fit: contain; }
+
+        .title-section { margin-top: 15px; color: white; }
+        .title-section h1 { font-size: 1.2rem; letter-spacing: 1px; }
+
+        .content { padding: 20px; }
+
+        /* --- ESTILO DE LA GALERÍA --- */
+        .multimedia-title {
+            text-align: left;
+            color: var(--primary-blue);
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
-        .title-section {
-            margin-top: 15px;
-            color: white;
+        .photo-gallery {
+            display: flex;
+            overflow-x: auto;
+            gap: 12px;
+            padding-bottom: 15px;
+            scrollbar-width: none; /* Oculta scroll en Firefox */
+        }
+        .photo-gallery::-webkit-scrollbar { display: none; } /* Oculta scroll en Chrome/Safari */
+
+        .photo-gallery img {
+            min-width: 180px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
-        .title-section h1 { font-size: 1.4rem; letter-spacing: 1px; }
-        .title-section p { font-size: 0.9rem; opacity: 0.9; }
-
-        /* Cuerpo de Información */
-        .content { padding: 25px; }
-
-        .info-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 15px;
-            margin-bottom: 25px;
+        .video-container {
+            width: 100%;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            overflow: hidden;
+            background: #000;
         }
+        video { width: 100%; display: block; }
 
+        /* --- INFO Y BOTONES --- */
+        .info-grid { display: grid; gap: 10px; margin-bottom: 20px; }
         .info-item {
             display: flex;
             align-items: center;
             background: var(--light-gray);
-            padding: 12px 15px;
-            border-radius: 12px;
+            padding: 10px;
+            border-radius: 10px;
             text-decoration: none;
             color: #333;
-            transition: transform 0.2s;
+            font-size: 0.8rem;
         }
-
-        .info-item:active { transform: scale(0.98); }
-
-        .info-item i {
-            font-size: 1.2rem;
-            color: var(--primary-blue);
-            width: 35px;
-        }
-
-        .info-text { text-align: left; font-size: 0.85rem; }
+        .info-item i { color: var(--primary-blue); width: 30px; font-size: 1.1rem; }
         .info-text span { display: block; font-weight: bold; color: var(--primary-blue); }
 
-        /* Botones de Acción */
-        .actions {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-        }
-
+        .actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
         .btn {
             padding: 12px;
             border-radius: 10px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
+            gap: 5px;
             color: white;
         }
-
         .btn-whatsapp { background-color: #25D366; }
         .btn-web { background-color: var(--primary-blue); }
-        .btn-catalog { background-color: #e67e22; grid-column: span 2; }
+        .btn-catalog { background-color: #e67e22; grid-column: span 2; margin-top: 5px; }
 
-        /* Sección de Ventajas Extraídas */
-        .benefits {
-            background: #f9f9f9;
-            padding: 20px;
-            text-align: left;
-            font-size: 0.8rem;
-            border-top: 1px solid #ddd;
-        }
+        .benefits { background: #f9f9f9; padding: 15px; text-align: left; font-size: 0.75rem; border-top: 1px solid #ddd; }
+        .benefits h3 { color: var(--primary-blue); margin-bottom: 8px; }
 
-        .benefits h3 { color: var(--primary-blue); margin-bottom: 10px; font-size: 0.9rem; }
-        .benefits ul { list-style: none; }
-        .benefits li { margin-bottom: 5px; position: relative; padding-left: 15px; }
-        .benefits li::before { content: "✔"; position: absolute; left: 0; color: green; }
+        .footer { padding: 15px; font-size: 0.65rem; color: #777; background: #eee; }
 
-        /* Footer */
-        .footer {
-            padding: 20px;
-            font-size: 0.7rem;
-            color: #777;
-            background: #eee;
-        }
-
-        /* Control de Suscripción (Lógica Invisible) */
         #expiry-overlay {
-            display: none;
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.9);
-            color: white;
-            z-index: 1000;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            text-align: center;
+            display: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.9); color: white; z-index: 1000;
+            flex-direction: column; justify-content: center; align-items: center; padding: 20px;
         }
     </style>
 </head>
@@ -171,65 +150,58 @@
 
     <div class="card" id="mainCard">
         <div id="expiry-overlay">
-            <i class="fas fa-exclamation-triangle style="font-size: 3rem; color: yellow; margin-bottom: 20px;"></i>
+            <i class="fas fa-lock" style="font-size: 3rem; color: var(--accent-yellow); margin-bottom: 20px;"></i>
             <h2>SERVICIO SUSPENDIDO</h2>
-            <p>Esta tarjeta digital ha vencido. Por favor contacte al administrador para renovar su suscripción.</p>
+            <p>Por favor contacte al administrador.</p>
         </div>
 
         <div class="header">
             <div class="logo-container">
-                <img src="friglobal.PNG" alt="Frío Global Electry Logo">
+                <img src="friglobal.PNG" alt="Logo">
             </div>
             <div class="title-section">
                 <h1>FRÍO GLOBAL ELECTRY</h1>
-                <p>Más de 10 años en el sector eléctrico</p>
+                <p>Más de 10 años de experiencia</p>
             </div>
         </div>
 
         <div class="content">
-            <div class="info-grid">
-                <div class="info-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <div class="info-text">
-                        <span>Dirección</span>
-                        B. Santa Elena, Caucasia - Antioquia, CO.
-                    </div>
-                </div>
+            
+            <p class="multimedia-title"><i class="fas fa-images"></i> Galería de Trabajos</p>
+            <div class="photo-gallery">
+                <img src="assets/foto1.jpg" alt="Instalación 1">
+                <img src="assets/foto2.jpg" alt="Instalación 2">
+                <img src="assets/foto3.jpg" alt="Instalación 3">
+            </div>
 
+            <p class="multimedia-title"><i class="fas fa-play-circle"></i> Video Corporativo</p>
+            <div class="video-container">
+                <video controls>
+                    <source src="assets/video1.mp4" type="video/mp4">
+                    Tu navegador no soporta video.
+                </video>
+            </div>
+
+            <div class="info-grid">
                 <a href="tel:+573127827534" class="info-item">
                     <i class="fas fa-phone-alt"></i>
-                    <div class="info-text">
-                        <span>Llámanos</span>
-                        312 782 7534 / 312 289 7841
-                    </div>
+                    <div class="info-text"><span>Llamar ahora</span>312 782 7534</div>
                 </a>
-
                 <a href="mailto:gerencia@frioglobalelectric.com" class="info-item">
                     <i class="fas fa-envelope"></i>
-                    <div class="info-text">
-                        <span>Correo</span>
-                        gerencia@frioglobalelectric.com
-                    </div>
+                    <div class="info-text"><span>Correo</span>gerencia@frioglobalelectric.com</div>
                 </a>
-
-                <div class="info-item">
-                    <i class="fas fa-clock"></i>
-                    <div class="info-text">
-                        <span>Horarios de Atención</span>
-                        L-V: 8:00AM - 6:00PM | S: 8:00AM - 5:00PM
-                    </div>
-                </div>
             </div>
 
             <div class="actions">
-                <a href="https://wa.me/573127827534?text=Hola,%20vengo%20de%20tu%20tarjeta%20digital.%20Deseo%20información." class="btn btn-whatsapp">
+                <a href="https://wa.me/573127827534" class="btn btn-whatsapp">
                     <i class="fab fa-whatsapp"></i> WhatsApp
                 </a>
                 <a href="https://frioglobalelectric.com/" class="btn btn-web">
                     <i class="fas fa-globe"></i> Sitio Web
                 </a>
-                <a href="#" class="btn btn-catalog">
-                    <i class="fas fa-file-pdf"></i> Descargar Catálogo (PDF)
+                <a href="assets/catalogo.pdf" target="_blank" class="btn btn-catalog">
+                    <i class="fas fa-file-pdf"></i> Ver Catálogo Completo (PDF)
                 </a>
             </div>
         </div>
@@ -237,33 +209,25 @@
         <div class="benefits">
             <h3>Ventajas Energía Solar</h3>
             <ul>
-                <li>Fuente ilimitada y limpia.</li>
-                <li>Reduce uso de combustibles fósiles.</li>
-                <li>Ideal para zonas rurales o aisladas.</li>
-                <li>Ahorro económico frente a la red.</li>
+                <li>✔ Fuente ilimitada y limpia.</li>
+                <li>✔ Ahorro económico garantizado.</li>
             </ul>
         </div>
 
         <footer class="footer">
             <p id="current-date"></p>
             <p>App desarrollada por <strong>VIBRAS POSITIVAS (3117700431)</strong></p>
-            <p>© 2026 Todos los derechos reservados.</p>
+            <p>Derechos de Autor © 2026</p>
         </footer>
     </div>
 
     <script>
-        // --- CONTROL DE SUSCRIPCIÓN INVISIBLE ---
-        // Configura aquí la fecha de vencimiento (Año, Mes-1, Día)
-        const expirationDate = new Date(2027, 3, 5); // Ejemplo: Vence el 5 de Abril de 2027
+        const expirationDate = new Date(2027, 3, 5); 
         const today = new Date();
+        if (today > expirationDate) { document.getElementById('expiry-overlay').style.display = 'flex'; }
 
-        if (today > expirationDate) {
-            document.getElementById('expiry-overlay').style.display = 'flex';
-        }
-
-        // --- HORA REAL COLOMBIA ---
         const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', timeZone: 'America/Bogota' };
-        document.getElementById('current-date').innerText = "Hoy es: " + today.toLocaleDateString('es-CO', options);
+        document.getElementById('current-date').innerText = "Hoy: " + today.toLocaleDateString('es-CO', options);
     </script>
 </body>
 </html>
