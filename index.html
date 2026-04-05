@@ -1,1 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frío Global Electric - Tarjeta Digital</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #3f51b5;
+            --accent-yellow: #fdd835;
+            --dark-bg: #1a1a1a;
+            --white: #ffffff;
+            --light-gray: #f4f4f4;
+        }
 
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark-bg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Contenedor Principal */
+        .card {
+            background: var(--white);
+            width: 100%;
+            max-width: 400px;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            text-align: center;
+            position: relative;
+        }
+
+        /* Header con Logo */
+        .header {
+            background: linear-gradient(135deg, #2c3e50, #4ca1af);
+            padding: 40px 20px;
+            position: relative;
+        }
+
+        .logo-container {
+            background: white;
+            width: 120px;
+            height: 120px;
+            margin: 0 auto;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+            border: 4px solid var(--accent-yellow);
+        }
+
+        .logo-container img {
+            width: 85%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .title-section {
+            margin-top: 15px;
+            color: white;
+        }
+
+        .title-section h1 { font-size: 1.4rem; letter-spacing: 1px; }
+        .title-section p { font-size: 0.9rem; opacity: 0.9; }
+
+        /* Cuerpo de Información */
+        .content { padding: 25px; }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            background: var(--light-gray);
+            padding: 12px 15px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #333;
+            transition: transform 0.2s;
+        }
+
+        .info-item:active { transform: scale(0.98); }
+
+        .info-item i {
+            font-size: 1.2rem;
+            color: var(--primary-blue);
+            width: 35px;
+        }
+
+        .info-text { text-align: left; font-size: 0.85rem; }
+        .info-text span { display: block; font-weight: bold; color: var(--primary-blue); }
+
+        /* Botones de Acción */
+        .actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 12px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            color: white;
+        }
+
+        .btn-whatsapp { background-color: #25D366; }
+        .btn-web { background-color: var(--primary-blue); }
+        .btn-catalog { background-color: #e67e22; grid-column: span 2; }
+
+        /* Sección de Ventajas Extraídas */
+        .benefits {
+            background: #f9f9f9;
+            padding: 20px;
+            text-align: left;
+            font-size: 0.8rem;
+            border-top: 1px solid #ddd;
+        }
+
+        .benefits h3 { color: var(--primary-blue); margin-bottom: 10px; font-size: 0.9rem; }
+        .benefits ul { list-style: none; }
+        .benefits li { margin-bottom: 5px; position: relative; padding-left: 15px; }
+        .benefits li::before { content: "✔"; position: absolute; left: 0; color: green; }
+
+        /* Footer */
+        .footer {
+            padding: 20px;
+            font-size: 0.7rem;
+            color: #777;
+            background: #eee;
+        }
+
+        /* Control de Suscripción (Lógica Invisible) */
+        #expiry-overlay {
+            display: none;
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.9);
+            color: white;
+            z-index: 1000;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card" id="mainCard">
+        <div id="expiry-overlay">
+            <i class="fas fa-exclamation-triangle style="font-size: 3rem; color: yellow; margin-bottom: 20px;"></i>
+            <h2>SERVICIO SUSPENDIDO</h2>
+            <p>Esta tarjeta digital ha vencido. Por favor contacte al administrador para renovar su suscripción.</p>
+        </div>
+
+        <div class="header">
+            <div class="logo-container">
+                <img src="friglobal.PNG" alt="Frío Global Electric Logo">
+            </div>
+            <div class="title-section">
+                <h1>FRÍO GLOBAL ELECTRIC</h1>
+                <p>Más de 10 años en el sector eléctrico</p>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="info-grid">
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div class="info-text">
+                        <span>Dirección</span>
+                        B. Santa Elena, Caucasia - Antioquia, CO.
+                    </div>
+                </div>
+
+                <a href="tel:+573127827534" class="info-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <div class="info-text">
+                        <span>Llámanos</span>
+                        312 782 7534 / 312 289 7841
+                    </div>
+                </a>
+
+                <a href="mailto:gerencia@frioglobalelectric.com" class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <div class="info-text">
+                        <span>Correo</span>
+                        gerencia@frioglobalelectric.com
+                    </div>
+                </a>
+
+                <div class="info-item">
+                    <i class="fas fa-clock"></i>
+                    <div class="info-text">
+                        <span>Horarios de Atención</span>
+                        L-V: 8:00AM - 6:00PM | S: 8:00AM - 5:00PM
+                    </div>
+                </div>
+            </div>
+
+            <div class="actions">
+                <a href="https://wa.me/573127827534?text=Hola,%20vengo%20de%20tu%20tarjeta%20digital.%20Deseo%20información." class="btn btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+                <a href="https://frioglobalelectric.com/" class="btn btn-web">
+                    <i class="fas fa-globe"></i> Sitio Web
+                </a>
+                <a href="#" class="btn btn-catalog">
+                    <i class="fas fa-file-pdf"></i> Descargar Catálogo (PDF)
+                </a>
+            </div>
+        </div>
+
+        <div class="benefits">
+            <h3>Ventajas Energía Solar</h3>
+            <ul>
+                <li>Fuente ilimitada y limpia.</li>
+                <li>Reduce uso de combustibles fósiles.</li>
+                <li>Ideal para zonas rurales o aisladas.</li>
+                <li>Ahorro económico frente a la red.</li>
+            </ul>
+        </div>
+
+        <footer class="footer">
+            <p id="current-date"></p>
+            <p>App desarrollada por <strong>VIBRAS POSITIVAS (3117700431)</strong></p>
+            <p>© 2026 Todos los derechos reservados.</p>
+        </footer>
+    </div>
+
+    <script>
+        // --- CONTROL DE SUSCRIPCIÓN INVISIBLE ---
+        // Configura aquí la fecha de vencimiento (Año, Mes-1, Día)
+        const expirationDate = new Date(2027, 3, 5); // Ejemplo: Vence el 5 de Abril de 2027
+        const today = new Date();
+
+        if (today > expirationDate) {
+            document.getElementById('expiry-overlay').style.display = 'flex';
+        }
+
+        // --- HORA REAL COLOMBIA ---
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', timeZone: 'America/Bogota' };
+        document.getElementById('current-date').innerText = "Hoy es: " + today.toLocaleDateString('es-CO', options);
+    </script>
+</body>
+</html>
