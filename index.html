@@ -64,7 +64,6 @@
 
         .content { padding: 20px; }
 
-        /* --- ESTILO DE LA GALERÍA --- */
         .multimedia-title {
             text-align: left;
             color: var(--primary-blue);
@@ -81,13 +80,13 @@
             overflow-x: auto;
             gap: 12px;
             padding-bottom: 15px;
-            scrollbar-width: none; /* Oculta scroll en Firefox */
+            scrollbar-width: none;
         }
-        .photo-gallery::-webkit-scrollbar { display: none; } /* Oculta scroll en Chrome/Safari */
+        .photo-gallery::-webkit-scrollbar { display: none; }
 
         .photo-gallery img {
-            min-width: 180px;
-            height: 120px;
+            min-width: 200px;
+            height: 140px;
             object-fit: cover;
             border-radius: 12px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -95,14 +94,21 @@
 
         .video-container {
             width: 100%;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             border-radius: 15px;
             overflow: hidden;
             background: #000;
         }
         video { width: 100%; display: block; }
 
-        /* --- INFO Y BOTONES --- */
+        .video-caption {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
         .info-grid { display: grid; gap: 10px; margin-bottom: 20px; }
         .info-item {
             display: flex;
@@ -161,7 +167,7 @@
             </div>
             <div class="title-section">
                 <h1>FRÍO GLOBAL ELECTRIC</h1>
-                <p>Más de 10 años de experiencia</p>
+                <p>Más de 10 años de experiencia [cite: 12]</p>
             </div>
         </div>
 
@@ -185,28 +191,25 @@
                 <img src="assets/f14.jpeg" alt="Instalación 14">
                 <img src="assets/f15.jpeg" alt="Instalación 15">
                 <img src="assets/f16.jpeg" alt="Instalación 16">
-                              
             </div>
 
-            <p class="multimedia-title"><i class="fas fa-play-circle"></i> Video Corporativo</p>
+            <p class="multimedia-title"><i class="fas fa-play-circle"></i> Proyecto Destacado</p>
             <div class="video-container">
                 <video controls>
-                    <source src="assets/f24.mp4" type="video/mp4">
-                    <source src="assets/f25.mp4" type="video/mp4">
                     <source src="assets/f26.mp4" type="video/mp4">
-                                     
                     Tu navegador no soporta video.
                 </video>
             </div>
+            <p class="video-caption">PROYECTO GIMNASIO BRUTAL</p>
 
             <div class="info-grid">
                 <a href="tel:+573127827534" class="info-item">
                     <i class="fas fa-phone-alt"></i>
-                    <div class="info-text"><span>Llamar ahora</span>312 782 7534</div>
+                    <div class="info-text"><span>Llamar ahora</span>312 782 7534 [cite: 22]</div>
                 </a>
                 <a href="mailto:gerencia@frioglobalelectric.com" class="info-item">
                     <i class="fas fa-envelope"></i>
-                    <div class="info-text"><span>Correo</span>gerencia@frioglobalelectric.com</div>
+                    <div class="info-text"><span>Correo</span>gerencia@frioglobalelectric.com [cite: 23]</div>
                 </a>
             </div>
 
@@ -215,26 +218,28 @@
                     <i class="fab fa-whatsapp"></i> WhatsApp
                 </a>
                 <a href="https://frioglobalelectric.com/" class="btn btn-web">
-                    <i class="fas fa-globe"></i> Sitio Web
+                    <i class="fas fa-globe"></i> Sitio Web [cite: 25]
                 </a>
-                <a href="assets/catalogo.pdf" target="_blank" class="btn btn-catalog">
-                    <i class="fas fa-file-pdf"></i> Ver Catálogo Completo (PDF)
+                <a href="FRIO.pdf" target="_blank" class="btn btn-catalog">
+                    <i class="fas fa-file-pdf"></i> VER CATÁLOGO COMPLETO PDF
                 </a>
             </div>
         </div>
 
         <div class="benefits">
-            <h3>Ventajas Energía Solar</h3>
+            <h3>Nuestros Servicios Especializados [cite: 4]</h3>
             <ul>
-                <li>✔ Fuente ilimitada y limpia.</li>
-                <li>✔ Ahorro económico garantizado.</li>
+                <li>✔ Energía Solar [cite: 5]</li>
+                <li>✔ Refrigeración Industrial y Comercial [cite: 6]</li>
+                <li>✔ Instalación de Aires Acondicionados [cite: 7]</li>
+                <li>✔ Instalaciones Eléctricas de Alta Calidad [cite: 8]</li>
             </ul>
         </div>
 
         <footer class="footer">
             <p id="current-date"></p>
-            <p>App desarrollada por <strong>VIBRAS POSITIVAS (3117700431)</strong></p>
-            <p>Derechos de Autor © 2026</p>
+            <p>App desarrollada por <strong>VIBRAS POSITIVAS HM (3117700431) [cite: 27]</strong></p>
+            <p>Derechos de Autor © 2026 [cite: 27]</p>
         </footer>
     </div>
 
